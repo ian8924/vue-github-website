@@ -5,11 +5,13 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    sidebarDraw: true
   },
   mutations: {
+    setSidebarDraw (state, newOne) {
+      state.sidebarDraw = newOne
+    }
   },
-  actions: {
-  },
-  modules: {
-  }
+  actions: {},
+  modules: {}
 })
