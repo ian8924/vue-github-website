@@ -50,7 +50,9 @@ export default {
   },
   methods: {
     goRoute (val) {
-      this.$router.push({ name: val })
+      if (val !== this.$route.name) {
+        this.$router.push({ name: val })
+      }
     }
   }
 }
