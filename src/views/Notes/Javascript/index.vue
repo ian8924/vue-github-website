@@ -1,5 +1,6 @@
 <template>
 <div>
+    <h2 v-if="$route.name ==='javascript'">文章列表</h2>
     <v-list two-line style="margin-right:20px;" v-if="$route.name ==='javascript'">
       <v-list-item-group>
         <template v-for="(item, index) in items" >

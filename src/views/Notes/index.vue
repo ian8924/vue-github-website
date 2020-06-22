@@ -1,5 +1,6 @@
 <template>
 <div>
+  <h2 v-if="$route.name==='notes'">主題列表</h2>
   <v-row class="mx-auto" v-if="$route.name==='notes'">
           <v-col
             v-for="(item, i) in items"
