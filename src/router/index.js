@@ -24,6 +24,11 @@ const routes = [
             path: 'js1',
             name: 'js1',
             component: () => import('../views/Notes/Javascript/js1.vue')
+          },
+          {
+            path: 'js2',
+            name: 'js2',
+            component: () => import('../views/Notes/Javascript/js2.vue')
           }
         ]
       }

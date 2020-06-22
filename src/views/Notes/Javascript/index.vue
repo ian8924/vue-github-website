@@ -30,10 +30,17 @@ export default {
     items: [
       {
         action: '15 min',
-        title: 'array 處理方法',
+        title: 'Array 處理方法',
         headline: '2020.1.22',
         subtitle: 'js array 方法範例',
         link: 'js1'
+      },
+      {
+        action: '15 min',
+        title: 'CORS觀念',
+        headline: '2020.1.22',
+        subtitle: 'CORS觀念',
+        link: 'js2'
       }
     ]
   })
