@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div style="margin:20px 10%">
      <v-md-preview  :text="text" ></v-md-preview>
   </div>
 </template>
