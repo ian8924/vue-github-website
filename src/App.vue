@@ -2,7 +2,7 @@
   <v-app>
     <Header />
       <div style="padding:80px 0 0 80px">
-      <transition name="slide-fade" mode="out-in">
+      <transition name="slide-fade" mode="in-out">
         <router-view></router-view>
       </transition>
       </div>
@@ -22,7 +22,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style >
 /* 可以设置不同的进入和离开动画 */
 /* 设置持续时间和动画函数 */
 .slide-fade-enter-active {
