@@ -11,6 +11,8 @@
         <v-list-item
           v-for="item in items"
           :key="item.title"
+          :class="{'gray':item.route===$route.name}"
+          @click="goRoute(item.route)"
           link
         >
           <v-list-item-icon>
@@ -29,9 +31,9 @@ export default {
   data () {
     return {
       items: [
-        { title: 'Dashboard', icon: 'mdi-view-dashboard' },
-        { title: 'Photos', icon: 'mdi-image' },
-        { title: 'About', icon: 'mdi-help-box' }
+        { title: '首頁', icon: 'mdi-view-dashboard', route: 'home' },
+        { title: '簡介', icon: 'mdi-image', route: 'hello' },
+        { title: '筆記', icon: 'mdi-help-box', route: 'notes' }
       ],
       right: null
     }
@@ -45,6 +47,16 @@ export default {
         this.$store.commit('setSidebarDraw', val)
       }
     }
+  },
+  methods: {
+    goRoute (val) {
+      this.$router.push({ name: val })
+    }
   }
 }
 </script>
+<style  scoped>
+.gray{
+  background: rgb(167, 162, 162);
+}
+</style>
