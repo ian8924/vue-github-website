@@ -56,6 +56,13 @@ export default {
           title: 'Vue 筆記',
           link: 'vue',
           artist: 'ian'
+        },
+        {
+          color: '#cc99cd',
+          src: require('../../assets/note.jpg'),
+          title: '自動化測試',
+          link: 'test',
+          artist: 'ian'
         }
       ]
     }

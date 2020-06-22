@@ -113,6 +113,23 @@ const routes = [
             component: () => import('../views/Notes/Vue/vue15.vue')
           }
         ]
+      },
+      {
+        path: 'test',
+        name: 'test',
+        component: () => import('../views/Notes/Test/index.vue'),
+        children: [
+          {
+            path: 'test1',
+            name: 'test1',
+            component: () => import('../views/Notes/Test/test1.vue')
+          },
+          {
+            path: 'test2',
+            name: 'test2',
+            component: () => import('../views/Notes/Test/test2.vue')
+          }
+        ]
       }
     ]
   }
