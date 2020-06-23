@@ -130,6 +130,16 @@ const routes = [
             component: () => import('../views/Notes/Test/test2.vue')
           }
         ]
+      },
+      {
+        path: 'Map',
+        name: 'map',
+        component: () => import('../views/Map.vue')
+      },
+      {
+        path: 'Map2',
+        name: 'map2',
+        component: () => import('../views/Map2.vue')
       }
     ]
   }

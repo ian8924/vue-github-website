@@ -33,7 +33,9 @@ export default {
       items: [
         { title: '首頁', icon: 'mdi-view-dashboard', route: 'home' },
         { title: '簡介', icon: 'mdi-image', route: 'hello' },
-        { title: '筆記', icon: 'mdi-help-box', route: 'notes' }
+        { title: '筆記', icon: 'mdi-help-box', route: 'notes' },
+        { title: '地圖', icon: 'fa-map', route: 'map' },
+        { title: '地圖2', icon: 'fa-map', route: 'map2' }
       ],
       right: null
     }
