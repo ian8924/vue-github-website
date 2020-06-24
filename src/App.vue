@@ -1,23 +1,27 @@
 <template>
   <v-app>
     <Header />
-      <div style="padding:80px 0 0 80px">
-      <transition name="slide-fade" mode="out-in">
-        <router-view></router-view>
-      </transition>
+      <div style="padding:80px 0 200px 80px;min-height:800px;">
+        <transition name="slide-fade" mode="out-in">
+          <router-view></router-view>
+        </transition>
       </div>
     <SideBar/>
+    <Footer />
   </v-app>
 </template>
 
 <script>
 import Header from './layout/Header'
 import SideBar from './layout/SideBar'
+import Footer from './layout/Footer'
+
 export default {
   name: 'App',
   components: {
     Header,
-    SideBar
+    SideBar,
+    Footer
   }
 }
 </script>

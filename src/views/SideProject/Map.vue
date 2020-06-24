@@ -145,6 +145,7 @@ export default {
 #map{
     width:65%;
     height: 600px;
+    z-index: 1;
     background: rgb(0, 0, 0);
 }
 </style>
