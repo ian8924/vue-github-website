@@ -2,7 +2,7 @@
   <v-app>
     <Header />
       <div style="padding:80px 0 0 80px">
-      <transition name="slide-fade" mode="in-out">
+      <transition name="slide-fade" mode="out-in">
         <router-view></router-view>
       </transition>
       </div>

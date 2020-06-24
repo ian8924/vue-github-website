@@ -2,6 +2,8 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Notes from '../views/Notes/index.vue'
+import SideProject from '../views/SideProject/index.vue'
+
 Vue.use(VueRouter)
 
 const routes = [
@@ -130,16 +132,18 @@ const routes = [
             component: () => import('../views/Notes/Test/test2.vue')
           }
         ]
-      },
+      }
+    ]
+  },
+  {
+    path: '/SideProject',
+    name: 'SideProject',
+    component: SideProject,
+    children: [
       {
         path: 'Map',
-        name: 'map',
-        component: () => import('../views/Map.vue')
-      },
-      {
-        path: 'Map2',
-        name: 'map2',
-        component: () => import('../views/Map2.vue')
+        name: 'Map',
+        component: () => import('../views/SideProject/Map.vue')
       }
     ]
   }

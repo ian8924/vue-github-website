@@ -1,7 +1,7 @@
 <template>
 <div>
-  <h2 v-if="$route.name==='notes'">主題列表</h2>
-  <v-row class="mx-auto" v-if="$route.name==='notes'">
+  <h2 v-if="$route.name==='SideProject'">主題列表</h2>
+  <v-row class="mx-auto" v-if="$route.name==='SideProject'">
           <v-col
             v-for="(item, i) in items"
             :key="i"
@@ -33,9 +33,9 @@
             </v-card>
           </v-col>
     </v-row>
-    <transition name="slide-fade" mode="out-in">
-      <router-view></router-view>
-    </transition>
+     <transition name="slide-fade" mode="out-in">
+            <router-view></router-view>
+      </transition>
 </div>
 </template>
 
@@ -48,22 +48,8 @@ export default {
         {
           color: '#1F7087',
           src: require('../../assets/note.jpg'),
-          title: 'Javascript 相關筆記',
-          link: 'javascript',
-          artist: 'ian'
-        },
-        {
-          color: '#cccc00',
-          src: require('../../assets/note.jpg'),
-          title: 'Vue 筆記',
-          link: 'vue',
-          artist: 'ian'
-        },
-        {
-          color: '#cc99cd',
-          src: require('../../assets/note.jpg'),
-          title: '自動化測試',
-          link: 'test',
+          title: '口罩地圖範例',
+          link: 'Map',
           artist: 'ian'
         }
       ]
