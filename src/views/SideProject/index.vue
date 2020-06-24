@@ -1,5 +1,5 @@
 <template>
-<div>
+<div style="padding:20px 0 0 10%">
   <h2 v-if="$route.name==='SideProject'">主題列表</h2>
   <v-row class="mx-auto" v-if="$route.name==='SideProject'">
           <v-col
