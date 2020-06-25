@@ -10,12 +10,14 @@ import '@kangc/v-md-editor/lib/style/preview.css'
 import githubTheme from '@kangc/v-md-editor/lib/theme/github'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import { firestorePlugin } from 'vuefire'
 
 VMdPreview.use(githubTheme)
 Vue.use(VMdPreview)
 Vue.config.productionTip = false
 Vue.use(VueTypedJs)
 Vue.use(VueAxios, axios)
+Vue.use(firestorePlugin)
 
 new Vue({
   router,

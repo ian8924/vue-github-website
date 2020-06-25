@@ -1,37 +1,38 @@
 <template>
-<div>
-<h1>口罩地圖</h1>
-<p>應用openstreetmap＆leaflet結合政府opendatas</p>
-  <div style="display:flex;">
-    <div class="select-area">
+  <div>
+    <h1>口罩地圖</h1>
+    <p>應用openstreetmap＆leaflet結合政府opendatas</p>
+    <div style="display:flex;">
+      <div class="select-area">
         <v-select
-            v-model="city"
-            :items="cityOptions"
-            label="選城市"
-            outlined
+          v-model="city"
+          :items="cityOptions"
+          label="選城市"
+          outlined
         />
-         <v-select
-            v-model="area"
-            :items="areaOptions"
-            label="選地區"
-            outlined
+        <v-select
+          v-model="area"
+          :items="areaOptions"
+          label="選地區"
+          outlined
         />
-         <v-card
-            style="margin:10px"
-            :color="item.properties.mask_adult+item.properties.mask_child===0?'rgb(112,124,118)':'#385F73'"
-            @click="openPop(item)"
-            v-for="(item,index) in currentData"
-            :key="index"
-            dark
-          >
-            <v-card-title >{{item.properties.name}}</v-card-title>
-            <v-card-subtitle>
-                成人: {{item.properties.mask_adult}}, 小孩: {{item.properties.mask_child}}<br/>
-                {{item.properties.address}}</v-card-subtitle>
-          </v-card>
+        <v-card
+          v-for="(item,index) in currentData"
+          :key="index"
+          style="margin:10px"
+          :color="item.properties.mask_adult+item.properties.mask_child===0?'rgb(112,124,118)':'#385F73'"
+          dark
+          @click="openPop(item)"
+        >
+          <v-card-title>{{ item.properties.name }}</v-card-title>
+          <v-card-subtitle>
+            成人: {{ item.properties.mask_adult }}, 小孩: {{ item.properties.mask_child }}<br>
+            {{ item.properties.address }}
+          </v-card-subtitle>
+        </v-card>
+      </div>
+      <div id="map" />
     </div>
-    <div id="map"></div>
-  </div>
   </div>
 </template>
 
@@ -51,6 +52,22 @@ export default {
       areaOptions: [],
       city: '',
       area: ''
+    }
+  },
+  watch: {
+    city (val) {
+      this.removeMapMarker()
+      // 設定地區選項
+      this.areaOptions = []
+      const index = this.cityOptions.indexOf(val)
+      this.cityName[index].AreaList.map(item => {
+        this.areaOptions.push(item.AreaName)
+      })
+      this.area = ''
+    },
+    area (val) {
+      this.removeMapMarker()
+      this.updateMap()
     }
   },
   mounted () {
@@ -112,22 +129,6 @@ export default {
     地址: <a href="https://www.google.com.tw/maps/place/${properties.address}" target="_blank">${properties.address}</a><br>
     電話: ${properties.phone}<br>
     <small>最後更新時間: ${properties.updated}</small>`).openPopup()
-    }
-  },
-  watch: {
-    city (val) {
-      this.removeMapMarker()
-      // 設定地區選項
-      this.areaOptions = []
-      const index = this.cityOptions.indexOf(val)
-      this.cityName[index].AreaList.map(item => {
-        this.areaOptions.push(item.AreaName)
-      })
-      this.area = ''
-    },
-    area (val) {
-      this.removeMapMarker()
-      this.updateMap()
     }
   }
 

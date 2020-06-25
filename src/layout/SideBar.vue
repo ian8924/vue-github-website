@@ -1,28 +1,29 @@
 <template>
   <v-navigation-drawer
-      v-model="drawer"
-      absolute
-      temporary >
-      <v-divider></v-divider>
-      <v-list
-        dense
-        nav
+    v-model="drawer"
+    absolute
+    temporary
+  >
+    <v-divider />
+    <v-list
+      dense
+      nav
+    >
+      <v-list-item
+        v-for="item in items"
+        :key="item.title"
+        :class="{'gray':item.route===$route.name}"
+        link
+        @click="goRoute(item.route)"
       >
-        <v-list-item
-          v-for="item in items"
-          :key="item.title"
-          :class="{'gray':item.route===$route.name}"
-          @click="goRoute(item.route)"
-          link
-        >
-          <v-list-item-icon>
-            <v-icon>{{ item.icon }}</v-icon>
-          </v-list-item-icon>
-          <v-list-item-content>
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
+        <v-list-item-icon>
+          <v-icon>{{ item.icon }}</v-icon>
+        </v-list-item-icon>
+        <v-list-item-content>
+          <v-list-item-title>{{ item.title }}</v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
+    </v-list>
   </v-navigation-drawer>
 </template>
 

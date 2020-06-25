@@ -1,5 +1,5 @@
 <template>
-  <v-card >
+  <v-card>
     <v-footer
       v-bind="localAttrs"
       :padless="padless"
@@ -19,11 +19,13 @@
             icon
             @click="goLink(icon.link)"
           >
-            <v-icon size="24px">{{ icon.icon }}</v-icon>
+            <v-icon size="24px">
+              {{ icon.icon }}
+            </v-icon>
           </v-btn>
         </v-card-text>
 
-        <v-divider></v-divider>
+        <v-divider />
 
         <v-card-text class="white--text">
           {{ new Date().getFullYear() }} — <strong>Vuetify</strong>

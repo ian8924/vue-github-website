@@ -1,6 +1,9 @@
 <template>
   <div style="margin:20px 10%">
-      <v-md-preview  :text="text" height="100%"></v-md-preview>
+    <v-md-preview
+      :text="text"
+      height="100%"
+    />
   </div>
 </template>
 

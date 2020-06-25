@@ -1,16 +1,21 @@
 <template>
-   <v-app-bar
-      app
-      style="background-color :rgb(100, 95, 95)"
+  <v-app-bar
+    app
+    style="background-color :rgb(100, 95, 95)"
+  >
+    <v-icon
+      style="color:white;font-size:20px"
+      @click="changeSidebar"
     >
-        <v-icon style="color:white;font-size:20px" @click="changeSidebar">fas fa-list</v-icon>
-      <v-spacer></v-spacer>
-    </v-app-bar>
+      fas fa-list
+    </v-icon>
+    <v-spacer />
+  </v-app-bar>
 </template>
 
 <script>
 export default {
-  name: 'header',
+  name: 'Header',
   methods: {
     changeSidebar () {
       this.$store.commit('setSidebarDraw', !this.$store.state.sidebarDraw)

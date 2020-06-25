@@ -1,12 +1,15 @@
 <template>
   <v-app>
     <Header />
-      <div style="padding:60px 0 200px 0px;min-height:800px;">
-        <transition name="slide-fade" mode="out-in">
-          <router-view></router-view>
-        </transition>
-      </div>
-    <SideBar/>
+    <div style="padding:60px 0 200px 0px;min-height:800px;">
+      <transition
+        name="slide-fade"
+        mode="out-in"
+      >
+        <router-view />
+      </transition>
+    </div>
+    <SideBar />
     <Footer />
   </v-app>
 </template>
