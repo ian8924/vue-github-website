@@ -6,7 +6,7 @@
             v-for="(item, i) in items"
             :key="i"
             cols="10"
-            @click="$router.push({name:item.link})"
+            @click="goLink(item.link,item.target)"
           >
             <v-card
               :color="item.color"
@@ -51,8 +51,31 @@ export default {
           title: '口罩地圖範例',
           link: 'Map',
           artist: 'ian'
+        },
+        {
+          color: '#1F7087',
+          src: require('../../assets/note.jpg'),
+          title: '聊天室',
+          link: 'Chatroom',
+          artist: 'ian'
+        },
+        {
+          color: '#1F7087',
+          src: require('../../assets/note.jpg'),
+          title: '桌遊網站',
+          target: 'http://happy6.s3-website-ap-northeast-1.amazonaws.com/',
+          artist: 'ian'
         }
       ]
+    }
+  },
+  methods: {
+    goLink (link, target) {
+      if (link) {
+        this.$router.push({ name: link })
+      } else {
+        window.open(target)
+      }
     }
   }
 }

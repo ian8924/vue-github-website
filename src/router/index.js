@@ -144,6 +144,11 @@ const routes = [
         path: 'Map',
         name: 'Map',
         component: () => import('../views/SideProject/Map.vue')
+      },
+      {
+        path: 'Chatroom',
+        name: 'Chatroom',
+        component: () => import('../views/SideProject/Chatroom.vue')
       }
     ]
   }
