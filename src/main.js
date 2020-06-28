@@ -11,6 +11,7 @@ import githubTheme from '@kangc/v-md-editor/lib/theme/github'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
 import { firestorePlugin } from 'vuefire'
+import '@/assets/application.js'
 
 VMdPreview.use(githubTheme)
 Vue.use(VMdPreview)
