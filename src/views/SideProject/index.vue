@@ -58,21 +58,21 @@ export default {
           src: require('../../assets/note.jpg'),
           title: '口罩地圖範例',
           link: 'Map',
-          artist: 'ian'
+          artist: '應用 openstreetmap ＆ leaflet 結合政府 opendatas'
         },
         {
           color: '#1F7087',
           src: require('../../assets/note.jpg'),
           title: '聊天室',
           link: 'Chatroom',
-          artist: 'ian'
+          artist: '串接FB login api + firebase realtime '
         },
         {
           color: '#1F7087',
           src: require('../../assets/note.jpg'),
           title: '桌遊網站',
           target: 'http://happy6.s3-website-ap-northeast-1.amazonaws.com/',
-          artist: 'ian'
+          artist: '使用 react 專案'
         }
       ]
     }

@@ -1,6 +1,6 @@
 <template>
-  <div style="padding-right:20%">
-    <FBlogin />
+  <div style="max-width:800px;margin:auto;padding-right:20px">
+    <FBlogin @profile="changeLoginState" />
     <v-text-field
       v-model="name"
       :counter="10"
@@ -19,19 +19,25 @@
       >
         <div
           v-if="item.name!==name"
-          style="color:green"
+          class="name"
         >
           {{ item.name }}
         </div>
-        <span style="color:red">
-          {{ changeFormat(item.time) }}
-        </span>
+        <div
+          v-else
+          class="name"
+        >
+          我
+        </div>
         <v-chip
           class="ma-2"
           small
         >
           {{ item.message }}
         </v-chip>
+        <span class="time">
+          {{ changeFormat(item.time) }}
+        </span>
       </div>
     </div>
     <div class="flex-bottom">
@@ -42,9 +48,10 @@
       >
       <button
         class="btn-1"
+        :class="{'green':canSend,'gray':!canSend}"
         @click="sendMessage"
       >
-        send
+        <i class="fas fa-arrow-circle-right" />
       </button>
     </div>
   </div>
@@ -64,6 +71,11 @@ export default {
       districts: [],
       inputValue: '',
       name: ''
+    }
+  },
+  computed: {
+    canSend () {
+      return this.inputValue !== ''
     }
   },
   mounted () {
@@ -98,6 +110,10 @@ export default {
     // 轉換時間格式
     changeFormat (val) {
       return moment(val).format('HH:mm:ss')
+    },
+    // FB登入
+    changeLoginState (val) {
+      this.name = val.name
     }
   }
 }
@@ -121,29 +137,63 @@ export default {
   justify-content: right;
 }
 .flex-bottom{
+  padding:10px 10px;
   width: 100%;
-  position: fixed;
+  position: sticky;
+  height: 70px;
   bottom: 0;
+  background: rgb(228, 225, 225);
  }
  .flex-top{
   width: 100%;
+  height: auto;
   position: fixed;
   top: 0;
  }
  .input-1{
-   height: 5vh;
-   width: 80%
+   background: rgb(128, 128, 128,0.5);
+   border-radius: 30px;
+   padding-left: 10px;
+   height: 40px;
+   width: 80%;
  }
  .btn-1{
-   width:5vh;
-   height: 30px;
-   background:rgb(153, 151, 151)
+   position: absolute;
+   right:0;
+   width: 15%;
+   height: 40px;
+   font-size: 25px;
+   /* padding: 5px 35px; */
+   color:white;
+   margin-right:10px;
  }
+
+ .green{
+   background:rgb(26, 226, 69);
+ }
+
+ .gray{
+     background: gray;
+ }
+
  .chatroom{
-  background-color: rgb(152, 156, 150);
+  background-color: rgb(109, 171, 230);
   height: 95vh;
   padding-bottom: 20vh;
   overflow-y: auto;
   overflow-x: hidden;
  }
+
+.name{
+    color:white;
+    padding-left:3px;
+    margin: 0 10px;
+}
+.time{
+    color:white;
+    font-size: 8px;
+    margin-top: 20px;
+    margin-right: 20px;
+}
+
 </style>

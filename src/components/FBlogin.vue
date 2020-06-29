@@ -31,6 +31,7 @@
 </template>
 
 <script>
+import '@/assets/application.js'
 import Profile from './Profile'
 export default {
   name: 'FBlogin',
@@ -43,10 +44,10 @@ export default {
       authorized: false
     }
   },
-  async mounted () {
+  mounted () {
     const vm = this
     // facebook 初始化
-    window.fbAsyncInit = await function () {
+    window.fbAsyncInit = function () {
       // eslint-disable-next-line no-undef
       FB.init({
         appId: '1346557768848626',
