@@ -1,6 +1,5 @@
 <template>
-  <div class="container">
-    <Profile :profile="profile" />
+  <div>
     <div class="row justify-content-center">
       <div
         v-if="!authorized"
@@ -14,30 +13,14 @@
           facebook登入
         </button>
       </div>
-      <div
-        v-else
-        class="col-2"
-      >
-        <button
-          type="button"
-          class="FBLogout"
-          @click="logout"
-        >
-          登出
-        </button>
-      </div>
     </div>
   </div>
 </template>
 
 <script>
 import '@/assets/application.js'
-import Profile from './Profile'
 export default {
   name: 'FBlogin',
-  components: {
-    Profile
-  },
   data () {
     return {
       profile: {},
@@ -69,8 +52,9 @@ export default {
     getProfile () {
       // eslint-disable-next-line no-undef
       FB.api('/me?fields=name,id,email', response => {
-        this.$set(this, 'profile', response)
+        console.log(response)
         this.$emit('profile', response)
+        this.$emit('islogin', true)
       })
     },
     // fb login
@@ -88,6 +72,7 @@ export default {
       // eslint-disable-next-line no-undef
       FB.logout((response) => {
         this.statusChangeCallback(response)
+        this.$emit('profile', {})
       })
     },
     statusChangeCallback (response) {
@@ -113,11 +98,5 @@ export default {
   border-radius: 10px;
   color:azure;
   background: rgb(43, 122, 226);
-}
-.FBLogout{
-  padding: 10px;
-  border-radius: 10px;
-  color:azure;
-  background: rgb(155, 151, 151);
 }
 </style>>

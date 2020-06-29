@@ -25,7 +25,7 @@ export default {
       }
     },
     profilePicture () {
-      return (this.profile.id) ? `https://graph.facebook.com/${this.profile.id}/picture?width=300` : '/static/man.gif'
+      return this.profile.id ? `https://graph.facebook.com/${this.profile.id}/picture?width=300` : this.profile.src
     }
   }
 }

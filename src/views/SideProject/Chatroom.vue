@@ -1,6 +1,32 @@
 <template>
   <div style="max-width:800px;margin:auto;padding-right:20px">
-    <FBlogin @profile="changeLoginState" />
+    <Profile :profile="profile" />
+    <div style="display:flex">
+      <FBlogin
+        v-if="!islogin"
+        @profile="changeLoginState"
+        @islogin="changeLogin"
+      />
+      <Googlelogin
+        v-if="!islogin"
+        @profile="changeLoginState"
+        @islogin="changeLogin"
+      />
+      <div class="row justify-content-center">
+        <div
+          v-if="islogin"
+          class="col-2"
+        >
+          <button
+            type="button"
+            class="Logout"
+            @click="logout"
+          >
+            登出
+          </button>
+        </div>
+      </div>
+    </div>
     <v-text-field
       v-model="name"
       :counter="10"
@@ -59,18 +85,24 @@
 
 <script>
 import FBlogin from '@/components/FBlogin'
+import Profile from '@/components/Profile'
+import Googlelogin from '@/components/Googlelogin'
 import { db } from '@/firebase'
 import moment from 'moment'
 const chineseRef = db.ref('messages')
 export default {
   components: {
-    FBlogin
+    FBlogin,
+    Profile,
+    Googlelogin
   },
   data () {
     return {
       districts: [],
       inputValue: '',
-      name: ''
+      name: '',
+      profile: '',
+      islogin: false
     }
   },
   computed: {
@@ -113,12 +145,28 @@ export default {
     },
     // FB登入
     changeLoginState (val) {
+      this.profile = val
       this.name = val.name
+    },
+    // 登出
+    logout () {
+      this.name = ''
+      this.profile = {}
+      this.islogin = false
+    },
+    changeLogin (val) {
+      this.islogin = val
     }
   }
 }
 </script>
 <style scope>
+.Logout{
+  padding: 10px;
+  border-radius: 10px;
+  color:azure;
+  background: rgb(155, 151, 151);
+}
 .anotherOne{
   text-align: left;
   margin-top:10px

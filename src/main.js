@@ -10,6 +10,7 @@ import '@kangc/v-md-editor/lib/style/preview.css'
 import githubTheme from '@kangc/v-md-editor/lib/theme/github'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
+import GAuth from 'vue-google-oauth2'
 import { firestorePlugin } from 'vuefire'
 
 VMdPreview.use(githubTheme)
@@ -18,7 +19,13 @@ Vue.config.productionTip = false
 Vue.use(VueTypedJs)
 Vue.use(VueAxios, axios)
 Vue.use(firestorePlugin)
-
+Vue.use(GAuth, {
+  clientId:
+    '375226969055-7kqm8054f7neuru2sip7n0sdij0p1ies.apps.googleusercontent.com',
+  scope: 'email',
+  prompt: 'consent',
+  fetch_basic_profile: true
+})
 new Vue({
   router,
   store,

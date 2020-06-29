@@ -65,7 +65,7 @@ export default {
           src: require('../../assets/note.jpg'),
           title: '聊天室',
           link: 'Chatroom',
-          artist: '串接FB login api + firebase realtime '
+          artist: '串接 google login api + FB login api + firebase realtime '
         },
         {
           color: '#1F7087',
