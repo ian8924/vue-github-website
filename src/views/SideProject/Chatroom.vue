@@ -1,6 +1,8 @@
 <template>
   <div style="max-width:800px;margin:auto;padding-right:20px">
+    <!-- 登入者 -->
     <Profile :profile="profile" />
+    <!-- 登入按鈕 -->
     <div style="display:flex">
       <FBlogin
         v-if="!islogin"
@@ -27,13 +29,14 @@
         </div>
       </div>
     </div>
+    <!-- 輸入名稱 -->
     <v-text-field
       v-model="name"
       :counter="10"
       label="稱號"
       required
     />
-
+    <!-- 聊天室 -->
     <div
       id="chatroom1"
       class="chatroom"
@@ -66,6 +69,7 @@
         </span>
       </div>
     </div>
+    <!-- 輸入訊息 -->
     <div class="flex-bottom">
       <input
         v-model="inputValue"
