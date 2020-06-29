@@ -19,9 +19,9 @@ export default {
   computed: {
     msg () {
       if (this.profile.name) {
-        return `Welcome <b><i> ${this.profile.name} </i></b> to Vue.js App`
+        return `${this.profile.name}`
       } else {
-        return 'Login Facebook to Enjoy the App'
+        return '登入開始聊天'
       }
     },
     profilePicture () {
