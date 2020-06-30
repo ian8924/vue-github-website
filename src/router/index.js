@@ -132,6 +132,18 @@ const routes = [
             component: () => import('../views/Notes/Test/test2.vue')
           }
         ]
+      },
+      {
+        path: 'css',
+        name: 'css',
+        component: () => import('../views/Notes/Css/index.vue'),
+        children: [
+          {
+            path: 'css1',
+            name: 'css1',
+            component: () => import('../views/Notes/Css/css1.vue')
+          }
+        ]
       }
     ]
   },

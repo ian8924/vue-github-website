@@ -73,6 +73,13 @@ export default {
           title: '自動化測試',
           link: 'test',
           artist: 'ian'
+        },
+        {
+          color: 'rgb(153,199,205)',
+          src: require('../../assets/note.jpg'),
+          title: 'CSS 筆記',
+          link: 'css',
+          artist: 'ian'
         }
       ]
     }
