@@ -64,9 +64,7 @@
         >
           {{ item.message }}
         </v-chip>
-        <span class="time">
-          {{ changeFormat(item.time) }}
-        </span>
+        <span class="time">{{ changeFormat(item.time) }}</span>
       </div>
     </div>
     <!-- 輸入訊息 -->
@@ -165,21 +163,21 @@ export default {
 }
 </script>
 <style scope>
-.Logout{
+.Logout {
   padding: 10px;
   border-radius: 10px;
-  color:azure;
+  color: azure;
   background: rgb(155, 151, 151);
 }
-.anotherOne{
+.anotherOne {
   text-align: left;
-  margin-top:10px
+  margin-top: 10px;
 }
-.isMe{
+.isMe {
   text-align: right;
-  margin-top:30px
+  margin-top: 30px;
 }
-.messageBox{
+.messageBox {
   color: black;
   background: rgb(224, 221, 221);
   border-radius: 10px;
@@ -188,64 +186,63 @@ export default {
   margin: 10px 0 5px 0;
   justify-content: right;
 }
-.flex-bottom{
-  padding:10px 10px;
+.flex-bottom {
+  padding: 10px 10px;
   width: 100%;
   position: sticky;
   height: 70px;
   bottom: 0;
   background: rgb(228, 225, 225);
- }
- .flex-top{
+}
+.flex-top {
   width: 100%;
   height: auto;
   position: fixed;
   top: 0;
- }
- .input-1{
-   background: rgb(128, 128, 128,0.5);
-   border-radius: 30px;
-   padding-left: 10px;
-   height: 40px;
-   width: 80%;
- }
- .btn-1{
-   position: absolute;
-   right:0;
-   width: 15%;
-   height: 40px;
-   font-size: 25px;
-   /* padding: 5px 35px; */
-   color:white;
-   margin-right:10px;
- }
+}
+.input-1 {
+  background: rgb(128, 128, 128, 0.5);
+  border-radius: 30px;
+  padding-left: 10px;
+  height: 40px;
+  width: 80%;
+}
+.btn-1 {
+  position: absolute;
+  right: 0;
+  width: 15%;
+  height: 40px;
+  font-size: 25px;
+  /* padding: 5px 35px; */
+  color: white;
+  margin-right: 10px;
+}
 
- .green{
-   background:rgb(26, 226, 69);
- }
+.green {
+  background: rgb(26, 226, 69);
+}
 
- .gray{
-     background: gray;
- }
+.gray {
+  background: gray;
+}
 
- .chatroom{
+.chatroom {
   background-color: rgb(109, 171, 230);
   height: 95vh;
   padding-bottom: 20vh;
   overflow-y: auto;
   overflow-x: hidden;
- }
-
-.name{
-    color:white;
-    padding-left:3px;
-    margin: 0 10px;
-}
-.time{
-    color:white;
-    font-size: 8px;
-    margin-top: 20px;
-    margin-right: 20px;
 }
 
+.name {
+  color: white;
+  padding-left: 3px;
+  margin: 0 10px;
+}
+.time {
+  color: white;
+  font-size: 8px;
+  margin-top: 20px;
+  margin-right: 20px;
+}
 </style>

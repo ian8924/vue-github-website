@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id='myCanvas' width='800px' height='600px'>
+    </canvas>
+</body>
+<script>
+
+    class Ball {
+
+        constructor(radius) {
+            this.x = 0;
+            this.y = 0;
+            this.radius = radius;
+            this.color = '';
+        }
+
+        draw(context) {
+            context.save();
+            context.translate(this.x, this.y);
+            context.lineWidth = this.lineWidth;
+            context.fillStyle = this.color;
+            context.beginPath();
+            //x, y, radius, start_angle, end_angle, anti-clockwise
+            context.arc(0, 0, this.radius, 0, (Math.PI * 2), true);
+            context.closePath();
+            context.fill();
+            context.restore();
+        }
+    }
+
+    let last_snow_created_time = new Date();
+    let snows = [];
+    // 根据时间创造新的雪花与气泡
+    function createSnow() {
+        let now = new Date();
+        if (now - last_snow_created_time > snows.length - now.getMinutes() && snows.length < 1000) {
+            const radius = Math.random() * 5 + 2;
+            let snow = new Ball(radius);
+            snow.x = Math.random() * canvas.width + 1;
+            snow.color = '#ffffff';
+            snows.push(snow);
+            last_snow_created_time = now;
+        }
+    }
+
+    function moveSnow(snow, index) {
+        snow.y += snow.radius / 3;
+        if (snow.y > canvas.height)
+            snows.splice(index, 1);
+        else
+            snow.draw(context);
+    }
+
+    function drawFrame() {
+        let animation = requestAnimationFrame(drawFrame);
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        context.drawImage(back_image, 0, 0, canvas.width, canvas.height);
+        createSnow();
+        snows.forEach(moveSnow);
+    }
+    let canvas = document.getElementById('myCanvas'),
+        context = canvas.getContext('2d');
+        let back_image = new Image();
+        back_image.src = 'https://s2.ax1x.com/2019/05/25/VAY1nf.jpg';
+
+        drawFrame();
+</script>
+</html>
