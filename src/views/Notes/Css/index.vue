@@ -52,6 +52,13 @@ export default {
         headline: '2020.6.30',
         subtitle: 'GRID 方法範例',
         link: 'css1'
+      },
+      {
+        action: '15 min',
+        title: 'SCSS 入門',
+        headline: '2020.6.30',
+        subtitle: '',
+        link: 'css2'
       }
     ]
   })

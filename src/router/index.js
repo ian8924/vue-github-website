@@ -142,6 +142,11 @@ const routes = [
             path: 'css1',
             name: 'css1',
             component: () => import('../views/Notes/Css/css1.vue')
+          },
+          {
+            path: 'css2',
+            name: 'css2',
+            component: () => import('../views/Notes/Css/css2.vue')
           }
         ]
       }
