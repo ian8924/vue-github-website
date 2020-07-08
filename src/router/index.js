@@ -18,6 +18,11 @@ const routes = [
     component: Notes,
     children: [
       {
+        path: '',
+        name: 'notesList',
+        component: () => import('../views/Notes/list.vue')
+      },
+      {
         path: 'javascript',
         name: 'javascript',
         component: () => import('../views/Notes/Javascript/index.vue'),
