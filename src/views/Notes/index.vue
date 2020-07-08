@@ -57,28 +57,28 @@ export default {
           color: '#1F7087',
           src: require('../../assets/note.jpg'),
           title: 'Javascript 相關筆記',
-          link: 'javascript',
+          link: 'jsList',
           artist: 'ian'
         },
         {
           color: '#cccc00',
           src: require('../../assets/note.jpg'),
           title: 'Vue 筆記',
-          link: 'vue',
+          link: 'vueList',
           artist: 'ian'
         },
         {
           color: '#cc99cd',
           src: require('../../assets/note.jpg'),
           title: '自動化測試',
-          link: 'test',
+          link: 'testList',
           artist: 'ian'
         },
         {
           color: 'rgb(153,199,205)',
           src: require('../../assets/note.jpg'),
           title: 'CSS 筆記',
-          link: 'css',
+          link: 'cssList',
           artist: 'ian'
         }
       ]

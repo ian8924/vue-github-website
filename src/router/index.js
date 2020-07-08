@@ -23,6 +23,11 @@ const routes = [
         component: () => import('../views/Notes/Javascript/index.vue'),
         children: [
           {
+            path: 'list',
+            name: 'jsList',
+            component: () => import('../views/Notes/Javascript/list.vue')
+          },
+          {
             path: 'js1',
             name: 'js1',
             component: () => import('../views/Notes/Javascript/js1.vue')
@@ -39,6 +44,11 @@ const routes = [
         name: 'vue',
         component: () => import('../views/Notes/Vue/index.vue'),
         children: [
+          {
+            path: 'list',
+            name: 'vueList',
+            component: () => import('../views/Notes/Vue/list.vue')
+          },
           {
             path: 'vue1',
             name: 'vue1',
@@ -122,6 +132,11 @@ const routes = [
         component: () => import('../views/Notes/Test/index.vue'),
         children: [
           {
+            path: 'list',
+            name: 'testList',
+            component: () => import('../views/Notes/Test/list.vue')
+          },
+          {
             path: 'test1',
             name: 'test1',
             component: () => import('../views/Notes/Test/test1.vue')
@@ -138,6 +153,11 @@ const routes = [
         name: 'css',
         component: () => import('../views/Notes/Css/index.vue'),
         children: [
+          {
+            path: 'list',
+            name: 'cssList',
+            component: () => import('../views/Notes/Css/list.vue')
+          },
           {
             path: 'css1',
             name: 'css1',
