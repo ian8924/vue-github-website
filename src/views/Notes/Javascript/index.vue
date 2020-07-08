@@ -24,21 +24,22 @@ export default {
     '$route.name': {
       immediate: true,
       handler (newValue, oldValue) {
+        const isLocal = window.location.host !== 'ian8924.github.io'
         const arr = [
           {
             text: '首頁',
             disabled: false,
-            href: '/'
+            href: isLocal ? '/' : '/vue-github-website/'
           },
           {
             text: '主題列表',
             disabled: false,
-            href: '/#/notes'
+            href: isLocal ? '/#/notes' : '/vue-github-website/#/notes'
           },
           {
             text: 'Javascript',
             disabled: newValue === 'jsList',
-            href: '/#/notes/javascript/list'
+            href: isLocal ? '/#/notes/javascript/list' : '/vue-github-website/#/notes/javascript/list'
           }
         ]
         if (newValue !== 'jsList') {
