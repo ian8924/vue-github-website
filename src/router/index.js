@@ -193,6 +193,11 @@ const routes = [
         component: () => import('../views/SideProject/Chatroom.vue')
       }
     ]
+  },
+  {
+    path: '/contact',
+    name: 'contact',
+    component: () => import('../views/Contact.vue')
   }
 ]
 
