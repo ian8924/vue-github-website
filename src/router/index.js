@@ -191,6 +191,11 @@ const routes = [
         path: 'Chatroom',
         name: 'Chatroom',
         component: () => import('../views/SideProject/Chatroom.vue')
+      },
+      {
+        path: 'Snake',
+        name: 'Snake',
+        component: () => import('../views/SideProject/Snake.vue')
       }
     ]
   },

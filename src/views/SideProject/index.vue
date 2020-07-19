@@ -1,5 +1,5 @@
 <template>
-  <div style="padding:20px 0 0 10%">
+  <div style="padding:20px 0 100px 10%">
     <h2 v-if="$route.name==='SideProject'">
       主題列表
     </h2>
@@ -73,6 +73,13 @@ export default {
           title: '桌遊網站',
           target: 'http://happy6.s3-website-ap-northeast-1.amazonaws.com/',
           artist: '使用 react 專案'
+        },
+        {
+          color: '#1F7087',
+          src: require('../../assets/note.jpg'),
+          title: '貪食蛇',
+          link: 'Snake',
+          artist: 'canvas'
         }
       ]
     }

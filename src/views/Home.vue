@@ -32,14 +32,15 @@ export default {
   name: 'Home',
   data () {
     return {
-      width: 1450,
-      height: 100
+      width: window.innerWidth,
+      height: 0
     }
   },
   mounted () {
-    this.width = document.body.clientWidth
-    this.height = document.body.clientWidth / 14 * 8
-
+    this.height = this.width / 14 * 8
+    this.$nextTick(() => {
+      window.addEventListener('resize', this.onResize)
+    })
     class Ball {
       constructor (radius) {
         this.x = 0
@@ -100,6 +101,15 @@ export default {
     back_image.src = 'https://s2.ax1x.com/2019/05/25/VAY1nf.jpg'
 
     drawFrame()
+  },
+  beforeDestroy () {
+    window.removeEventListener('resize', this.onResize)
+  },
+  methods: {
+    onResize () {
+      this.width = window.innerWidth
+      this.height = this.width / 14 * 8
+    }
   }
 }
 </script>
