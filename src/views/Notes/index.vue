@@ -1,5 +1,5 @@
 <template>
-  <div style="padding:20px 0 100px 10%">
+  <div style="padding:20px 0 200px 10%">
     <transition
       name="slide-fade"
       mode="out-in"

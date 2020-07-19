@@ -1,5 +1,5 @@
 <template>
-  <div style="padding:20px 0 100px 10%">
+  <div style="padding:20px 0 200px 10%">
     <h2 v-if="$route.name==='SideProject'">
       主題列表
     </h2>
