@@ -1,10 +1,12 @@
 /* eslint-disable camelcase */
 <template>
   <div class="home">
-    <div class="background-img">
+    <div
+      class="background-img"
+    >
       <div style="position:absolute;top:20%;left:45%">
         <vue-typed-js
-          :strings="['Hello', `I'am Ian`]"
+          :strings="['Hello', `I'am Ian`,`a front-end developer`]"
           :type-speed="200"
           :loop="true"
           :back-speed="10"
@@ -18,8 +20,8 @@
     </div>
     <canvas
       id="myCanvas"
-      width="1500%"
-      height="800%"
+      :width="width"
+      :height="height"
     />
   </div>
 </template>
@@ -28,9 +30,16 @@
 
 export default {
   name: 'Home',
-  components: {
+  data () {
+    return {
+      width: 1450,
+      height: 100
+    }
   },
   mounted () {
+    this.width = document.body.clientWidth
+    this.height = document.body.clientWidth / 14 * 8
+
     class Ball {
       constructor (radius) {
         this.x = 0
