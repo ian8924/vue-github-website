@@ -4,18 +4,45 @@
     <div
       class="background-img"
     >
-      <div style="position:absolute;top:20%;left:45%">
-        <vue-typed-js
-          :strings="['Hello', `I'am Ian`,`a front-end developer`]"
-          :type-speed="200"
-          :loop="true"
-          :back-speed="10"
-        >
-          <h1
-            class="typing"
-            style="color:rgb(185, 50, 50);font-family: 'Pacifico', cursive;"
-          />
-        </vue-typed-js>
+      <div
+        style="position: absolute;left: 50%;transform: translateX(-50%);top:200px"
+      >
+        <div style="hight:300px;">
+          <vue-typed-js
+            :strings="['Hello', `I'am Ian`,`a front-end developer`]"
+            :type-speed="200"
+            :loop="true"
+            :back-speed="10"
+          >
+            <h1
+              class="typing"
+              style="color:rgb(185, 50, 50);font-family: 'Pacifico', cursive;"
+            />
+          </vue-typed-js>
+          <div style="hight:300px; margin-top:300px">
+            <v-btn
+              style="margin:10px"
+              color="primary"
+              dark
+              @click="goProfile"
+            >
+              <v-icon style="margin:6px">
+                fas fa-address-book
+              </v-icon>
+              個人簡歷
+            </v-btn>
+            <!-- <v-btn
+              style="margin:10px"
+              color="primary"
+              dark
+            >
+              <v-icon style="margin:6px">
+                fas fa-address-book
+              </v-icon>
+              個人簡歷
+            </v-btn> -->
+          </div>
+        </div>
       </div>
     </div>
     <canvas
@@ -109,6 +136,10 @@ export default {
     onResize () {
       this.width = window.innerWidth
       this.height = this.width / 14 * 8
+    },
+    goProfile () {
+      // this.$router.push({ name: 'contact' })
+      window.open('https://www.cakeresume.com/justforian0915')
     }
   }
 }

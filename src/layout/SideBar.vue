@@ -33,7 +33,7 @@ export default {
     return {
       items: [
         { title: '首頁', icon: 'mdi-view-dashboard', route: 'home' },
-        { title: '簡介', icon: 'mdi-image', route: 'contact' },
+        // { title: '簡介', icon: 'mdi-image', route: 'contact' },
         { title: '筆記', icon: 'mdi-help-box', route: 'notesList' },
         { title: 'sideProject', icon: 'mdi-help-box', route: 'SideProject' }
       ],

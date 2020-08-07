@@ -73,14 +73,14 @@ export default {
           title: '桌遊網站',
           target: 'http://happy6.s3-website-ap-northeast-1.amazonaws.com/',
           artist: '使用 react 專案'
-        },
-        {
-          color: '#1F7087',
-          src: require('../../assets/note.jpg'),
-          title: '貪食蛇',
-          link: 'Snake',
-          artist: 'canvas'
         }
+        // {
+        //   color: '#1F7087',
+        //   src: require('../../assets/note.jpg'),
+        //   title: '貪食蛇',
+        //   link: 'Snake',
+        //   artist: 'canvas'
+        // }
       ]
     }
   },
