@@ -73,6 +73,13 @@ export default {
           title: '桌遊網站',
           target: 'http://happy6.s3-website-ap-northeast-1.amazonaws.com/',
           artist: '使用 react 專案'
+        },
+        {
+          color: '#1F7087',
+          src: require('../../assets/note.jpg'),
+          title: 'Youtube',
+          target: 'https://ian8924.github.io/video-project/#/',
+          artist: '串接Youtube API & Videojs'
         }
         // {
         //   color: '#1F7087',
