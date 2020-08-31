@@ -80,6 +80,13 @@ export default {
           title: 'Youtube',
           target: 'https://ian8924.github.io/video-project/#/',
           artist: '串接Youtube API & Videojs'
+        },
+        {
+          color: '#1F7087',
+          src: require('../../assets/note.jpg'),
+          title: 'cms 後台',
+          target: 'https://ian8924.github.io/cms-vue/',
+          artist: 'elementUI + vue cli'
         }
         // {
         //   color: '#1F7087',
