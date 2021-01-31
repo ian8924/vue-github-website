@@ -24,23 +24,24 @@
               style="margin:10px"
               color="primary"
               dark
+              @click="goLinkedin"
+            >
+              <v-icon style="margin:6px">
+                fas fa-address-book
+              </v-icon>
+              My LinkedIn
+            </v-btn>
+            <v-btn
+              style="margin:10px"
+              color="primary"
+              dark
               @click="goProfile"
             >
               <v-icon style="margin:6px">
                 fas fa-address-book
               </v-icon>
-              個人簡歷
+              My Github
             </v-btn>
-            <!-- <v-btn
-              style="margin:10px"
-              color="primary"
-              dark
-            >
-              <v-icon style="margin:6px">
-                fas fa-address-book
-              </v-icon>
-              個人簡歷
-            </v-btn> -->
           </div>
         </div>
       </div>
@@ -139,7 +140,10 @@ export default {
     },
     goProfile () {
       // this.$router.push({ name: 'contact' })
-      window.open('https://www.cakeresume.com/justforian0915')
+      window.open('https://github.com/ian8924/')
+    },
+    goLinkedin () {
+      window.open('https://www.linkedin.com/in/ye-an-liao-013131169/')
     }
   }
 }
