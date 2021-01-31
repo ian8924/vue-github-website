@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0dd4f8"],{"819b":function(t,e,n){"use strict";n.r(e);var r=function(){var t=this,e=t.$createElement,n=t._self._c||e;return n("div",{staticStyle:{margin:"20px 10%"}},[n("v-md-preview",{attrs:{text:t.text}})],1)},a=[],u="###### tags: `vue` `vue-new`\n# Timer\n每次用完後記得clear掉timer\n盡量使用setTimeout(),setInterval少用\n",i={data:function(){return{text:u}}},s=i,c=n("2877"),l=Object(c["a"])(s,r,a,!1,null,null,null);e["default"]=l.exports}}]);
+//# sourceMappingURL=chunk-2d0dd4f8.61331428.js.map
