@@ -14,7 +14,7 @@
     "core-js": "^3.6.5",
     "firebase": "^7.15.4",
     "leaflet": "^1.6.0",
-    "moment": "^2.27.0",
+    "moment": "^2.29.4",
     "vue": "^2.6.11",
     "vue-axios": "^2.1.5",
     "vue-google-oauth2": "^1.5.4",
